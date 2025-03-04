@@ -92,6 +92,7 @@ if __name__ == '__main__':
     Test_InputSentences = open("./data/text_for_inference.txt").readlines()
 
     input_sentences, all_segmentation_pred, all_tree_parsing_pred = inference(model, bert_tokenizer, Test_InputSentences, batch_size)
-    print(input_sentences[0])
-    print(all_segmentation_pred[0])
-    print(all_tree_parsing_pred[0])
+    for i_s, a_s_p, a_t_p in zip(input_sentences, all_segmentation_pred, all_tree_parsing_pred):
+        print(i_s)
+        print(a_s_p)
+        print(a_t_p)
